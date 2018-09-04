@@ -20,11 +20,10 @@ public class Diameter {
         int rootDiameter = 1 + height(root.getLeft()) + height(root.getRight());
         int left = diameter(root.getLeft());
         int right = diameter(root.getRight());
-
         return Math.max(rootDiameter, Math.max(left, right));
     }
 
-    public int height(Node root){
+    int height(Node root){
         if(root == null) return 0;
         return 1 + Math.max(height(root.getLeft()), height(root.getRight()));
     }

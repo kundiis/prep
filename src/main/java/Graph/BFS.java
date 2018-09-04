@@ -24,7 +24,7 @@ public class BFS {
                     q.add(neighbors);
                 }
             }
-
         }
+
     }
 }

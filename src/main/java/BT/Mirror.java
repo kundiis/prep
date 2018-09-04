@@ -5,6 +5,7 @@ package BT;
  */
 public class Mirror {
     // https://stackoverflow.com/questions/4366251/mirror-image-of-a-binary-tree
+    // invert a binary tree
 
     public void mirror(Node root){
         mirrorTree(root);

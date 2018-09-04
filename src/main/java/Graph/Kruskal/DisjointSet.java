@@ -12,7 +12,7 @@ public class DisjointSet {
     private List<Node> nodeList; // representatives
 
     public DisjointSet(List<Vertex> vertexList) {
-        this.nodeList = new ArrayList<>(nodeList.size());
+        this.nodeList = new ArrayList<>(vertexList.size());
         makeSets(vertexList);
     }
 
@@ -49,6 +49,7 @@ public class DisjointSet {
     }
 
     public void union(Node node1, Node node2){
+
         Node rep1 = findSet(node1);
         Node rep2 = findSet(node2);
 

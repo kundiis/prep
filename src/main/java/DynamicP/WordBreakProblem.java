@@ -10,7 +10,7 @@ import java.util.Set;
 public class WordBreakProblem {
 
     public void wordBreakBruteForceTwoWords(Set<String> dict, String input){
-        for(int i=0; i< dict.size(); i++){
+        for(int i=0; i< input.length(); i++){
             String prefix = input.substring(0, i);
             if( dict.contains(prefix)){
                 String suffix = input.substring(i, input.length());
@@ -22,7 +22,7 @@ public class WordBreakProblem {
     }
 
     public String wordBreakBruteForceMultiWords(Set<String> dict, String input){
-        for(int i=0; i< dict.size(); i++){
+        for(int i=0; i< input.length(); i++){
             String prefix = input.substring(0, i);
 
             if( dict.contains(prefix)){
@@ -47,7 +47,7 @@ public class WordBreakProblem {
             return memo.get(input);
         }
 
-        for(int i=0; i< dict.size(); i++){
+        for(int i=0; i< input.length(); i++){
             String prefix = input.substring(0, i);
             if( dict.contains(prefix)){
                 String suffix = input.substring(i, input.length());

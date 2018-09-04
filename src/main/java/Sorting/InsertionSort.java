@@ -15,7 +15,7 @@ public class InsertionSort {
             int element = data[i];
             int j = i -1;
 
-            while( j>0 && element < data[i]){
+            while( j>=0 && element < data[i]){
 
                 swap(j, i);
                 j = j -1;

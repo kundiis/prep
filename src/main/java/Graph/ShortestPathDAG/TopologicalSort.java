@@ -12,9 +12,11 @@ public class TopologicalSort {
     private Stack<Vertex> s = new Stack();
 
     public void Sort(List<Vertex> vertexList){
+
         for(Vertex v: vertexList){
             dfs(v);
         }
+
     }
 
     private void dfs(Vertex v) {
@@ -26,8 +28,8 @@ public class TopologicalSort {
                 target.setVisited(true);
                 dfs(target);
             }
-
         }
+
         s.push(v);
     }
 

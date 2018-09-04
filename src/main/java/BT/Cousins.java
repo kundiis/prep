@@ -10,7 +10,7 @@ public class Cousins {
     public void cousin(Node root, Node a, Node b){
 
         int h1 = getLevel(root, a, 0);
-        int h2 = getLevel(root, a, 0);
+        int h2 = getLevel(root, b, 0);
 
         if(h1 != h2){
             System.out.println("not cousin");

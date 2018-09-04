@@ -20,7 +20,6 @@ public class PermutationsNumbers {
             //System.out.println(" pair-->"+ newList);
             output.add(newList);
         }else {
-
             for (int i = 0; i < nums.length; i++) {
                 int current = nums[i];
 

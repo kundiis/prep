@@ -1,4 +1,4 @@
-package java;
+package Threading;
 
 public class Deadlock {
 
@@ -13,7 +13,11 @@ public class Deadlock {
             @Override
             public void run() {
                 synchronized (a){
+                    System.out.println("Thread 01 got a");
+
                     synchronized (b){
+                        System.out.println("Thread 01 got b");
+
                         try {
                             Thread.sleep(1000L);
                         } catch (InterruptedException e) {
@@ -28,7 +32,11 @@ public class Deadlock {
             @Override
             public void run() {
                 synchronized (b){
+                    System.out.println("Thread 02 got b");
+
                     synchronized (a){
+                        System.out.println("Thread 02 got a");
+
                         try {
                             Thread.sleep(1000L);
                         } catch (InterruptedException e) {

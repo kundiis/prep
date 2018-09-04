@@ -14,6 +14,7 @@ public class ShortestPath {
 
         TopologicalSort sort = new TopologicalSort();
         sort.Sort(vertexList);
+
         Stack<Vertex> s = sort.getTopoOrder();
 
         for( Vertex current: s){

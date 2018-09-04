@@ -1,34 +1,38 @@
 package BT;
 
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by km on 6/11/18.
  */
 public class LevelOrder {
 
-    public static void levelOrder(Node root){
+    public class Solution {
+        public List<List<Integer>> levelOrder(Node root) {
+            List<List<Integer>> result = new ArrayList<>();
+            if (root == null) return result;
 
-        if(root == null) return;
+            Queue<Node> q = new LinkedList<Node>();
+            q.offer(root);
 
-        Queue<Node> q = new LinkedList<>();
-        q.add(root);
+            while (!q.isEmpty()) {
+                List<Integer> list = new ArrayList<>();
+                int qSize = q.size();
+                for (int i = 0; i < qSize; i++) {
 
-        while(!q.isEmpty()){
-            Node element = q.remove();
-            System.out.print(element.getId() + "\t");
+                    Node node = q.poll();
+                    list.add(node.getId());
+                    // push child node into queue
+                    if (node.getLeft() != null) q.offer(node.getLeft());
+                    if (node.getRight() != null) q.offer(node.getRight());
 
-            if(element.getLeft()!=null)
-            q.add(element.getLeft());
+                }
+                result.add(new ArrayList<>(list));
+            }
 
-            if(element.getRight()!=null)
-            q.add(element.getRight());
+            return result;
         }
-
-        System.out.println();
     }
 
 

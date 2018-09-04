@@ -10,7 +10,6 @@ public class ProductRestOfThem {
     public void productSum(){
 
         // 1,2,3,4
-
         // create an array
         // 1             ,  a[0],      a[0]*a[1], a[0]*a[1]*a[2]
         // a[1]*a[2]*a[3],  a[2]*a[3], a[3]     , 1

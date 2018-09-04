@@ -11,7 +11,7 @@ public class DistanceBetweenNodes {
 
     public void distanceBetween(Node root, Node element1, Node element2){
         Node lca = findLCA(root, element1, element2);
-        int distance = level(lca, root.getLeft(), 0) + level(lca, root.getRight(), 0); // calculate sum of both heights
+        int distance = level(lca, element1, 0) + level(lca, element2, 0); // calculate sum of both heights
         System.out.println(distance);
     }
 

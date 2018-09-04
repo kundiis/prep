@@ -23,29 +23,29 @@ public class MergeSort {
     private void merge(int[] data, int low, int mid, int high) {
 
         int[] tempArray = new int[data.length];
-        for( int i = low; i<high; i++){
+        for( int i = low; i < high; i++){
             tempArray[i] = data[i];
         }
 
         int i = low; int j = mid+1; int k = low;
         while( i<= mid && j <= high){
             if(tempArray[i] <= tempArray[j]){
-                tempArray[k] = tempArray[i];
+                data[k] = tempArray[i];
                 i++;
             }else{
-                tempArray[k] = tempArray[j];
+                data[k] = tempArray[j];
                 j++;
             }
             k++;
         }
 
         while(i <= mid){
-            tempArray[k] = tempArray[i];
+            data[k] = tempArray[i];
             i++;
             k++;
         }
         while(j <= high){
-            tempArray[k] = tempArray[j];
+            data[k] = tempArray[j];
             j++;
             k++;
         }

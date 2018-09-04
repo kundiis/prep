@@ -9,7 +9,7 @@ public class LongestIncreasingSequenceLength {
 
         int[] temp = new int[array.length];
 
-        for( int i = 1; i< array.length; i++){
+        for( int i = 1; i < array.length; i++){
             for(int j = 0; j < i; j++){
                 if(array[j] < array[i]){
                     temp[i]  = Math.max( temp[i], temp[j] + 1);

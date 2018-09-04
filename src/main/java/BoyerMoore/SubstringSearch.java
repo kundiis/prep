@@ -8,6 +8,7 @@ import java.util.Map;
  */
 
 // Boyer Moore Algorithm
+    // O(Pattern) + O(nP) - worst case
 public class SubstringSearch {
 
     private Map<String, Integer> badMatch = new HashMap<>();

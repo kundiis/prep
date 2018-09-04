@@ -7,6 +7,8 @@ import java.util.PriorityQueue;
  */
 public class Dijkstra {
 
+    // O(V * LogV + E)
+
     public void algo(Vertex source){
 
         source.setDistance(0);
@@ -18,14 +20,14 @@ public class Dijkstra {
 
              for( Edge edge: current.getEdgeList()){
 
-                 Vertex target = edge.getEnd();
+                 Vertex v = edge.getEnd();
                  int newDistance = edge.getWeight() + source.getDistance();
 
-                 if(  newDistance < target.getDistance()){
-                    Q.remove(target);
-                    target.setDistance(newDistance);
-                    target.setPredecessor(current);
-                    Q.add(target);
+                 if(  newDistance < v.getDistance()){
+                    Q.remove(v);
+                    v.setDistance(newDistance);
+                    v.setPredecessor(current);
+                    Q.add(v);
                  }
              }
         }

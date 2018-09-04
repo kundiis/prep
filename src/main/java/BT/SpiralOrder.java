@@ -32,8 +32,8 @@ public class SpiralOrder {
                 Node element = s2.pop();
                 System.out.println(element.getId());
 
-                s2.push(element.getLeft());
-                s2.push(element.getRight());
+                s1.push(element.getLeft());
+                s1.push(element.getRight());
             }
         }
     }

@@ -18,9 +18,8 @@ public class Permutations {
             for (int i = 0; i < word.length(); i++) {
                 String current = perm + word.charAt(i);
                 String remaining = word.substring(0, i) + word.substring(i + 1, word.length());
-                System.out.println(word.charAt(i) + "--->"+ current + "--->" + remaining);
-
-                //permutations(current, remaining);
+                //System.out.println(word.charAt(i) + "--->"+ current + "--->" + remaining);
+                permutations(current, remaining);
             }
         }
     }
