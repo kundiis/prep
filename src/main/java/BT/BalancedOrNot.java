@@ -27,10 +27,10 @@ public class BalancedOrNot {
 
         if(root == null) return 0;
 
-        int left = balanced(root.getLeft());
+        int left = balancedOrNot(root.getLeft());
         if(left==-1) return -1;
 
-        int right = balanced(root.getRight());
+        int right = balancedOrNot(root.getRight());
         if(right==-1) return -1;
 
         if(Math.abs(left-right) > 1){

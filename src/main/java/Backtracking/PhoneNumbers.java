@@ -20,7 +20,7 @@ public class PhoneNumbers {
         map.put('8',"tuv");
         map.put('9',"wxyz");
         // Init 1 digits and the chars in queue
-        Queue<String> queue = new LinkedList<String>();
+        Queue<String> queue = new LinkedList<>();
         char current = digits.charAt(0);
         String alpha = map.get(current);
         for (int i = 0; i < alpha.length(); i++) {
@@ -28,13 +28,13 @@ public class PhoneNumbers {
         }
 
         int size = 0;
-        for (int i = 1; i < digits.length(); i++) {//iteratve all numbers
+        for (int i = 1; i < digits.length(); i++) { //iterative all numbers
             current = digits.charAt(i);
             alpha = map.get(current);
             size = queue.size();
-            for (int j = 0; j < size; j++) { //iteratve old queue
+            for (int j = 0; j < size; j++) { //iterative old queue
                 String str = queue.poll();
-                for (int k = 0; k < alpha.length(); k++) {//iteratve possibile chars per number key
+                for (int k = 0; k < alpha.length(); k++) { //iterative possible chars per number key
                     queue.offer(str + alpha.charAt(k));
                 }
             }
