@@ -9,7 +9,7 @@ public class PermutationsNumbers {
     public List<List<Integer>> permute(int[] nums) {
 
         List<List<Integer>> output = new ArrayList<>();
-        permutations(nums, new ArrayList<Integer>(), output);
+        permutations(nums, new ArrayList<>(), output);
         return output;
 
     }
@@ -17,7 +17,7 @@ public class PermutationsNumbers {
     private void permutations(int[] nums, List<Integer> newList, List<List<Integer>> output ){
 
         if(nums.length == 0){
-            //System.out.println(" pair-->"+ newList);
+            System.out.println(" pair-->"+ newList);
             output.add(newList);
         }else {
             for (int i = 0; i < nums.length; i++) {
@@ -43,7 +43,44 @@ public class PermutationsNumbers {
 
     public static void main(String[] args) {
         PermutationsNumbers numbers = new PermutationsNumbers();
-        numbers.permute(new int[]{1,2,3});
+       // numbers.permute(new int[]{1,2,3});
+
+        numbers.permute2(new int[]{1,2,3});
     }
+
+    public List<List<Integer>> permute2(int[] nums) {
+
+        List<List<Integer>> output = new ArrayList<>();
+        List<Integer> input = new ArrayList<>();
+        for(int i = 0; i< nums.length; i++){
+            input.add(nums[i]);
+        }
+        permutations2(input, new ArrayList<>(), output);
+        return output;
+
+    }
+
+    private void permutations2(List<Integer> input, List<Integer> numbers, List<List<Integer>> output) {
+
+        if(input.isEmpty()){
+            output.add(numbers);
+            System.out.println(" pair-->"+ numbers);
+            return;
+        }
+        for(int i = 0; i< input.size(); i++){
+
+            int n = input.get(i);
+            List<Integer> newInput = new ArrayList<>();
+            newInput.addAll(input.subList(0, i));
+            newInput.addAll(input.subList(i+1, input.size()) );
+
+            List<Integer> newArrayList = new ArrayList<>();
+            newArrayList.add(n);
+            newArrayList.addAll(numbers);
+
+            permutations2(newInput, newArrayList, output);
+        }
+    }
+
 }
 
