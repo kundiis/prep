@@ -16,7 +16,7 @@ public class TripletSum {
         //sort the array
         Arrays.sort(data); // 1,2,3,4,5,7,8
 
-        for( int i = 0; i< data.length; i++){
+        for( int i = 0; i< data.length-2; i++){
 
             int j = i+1;
             int k = data.length -1;
