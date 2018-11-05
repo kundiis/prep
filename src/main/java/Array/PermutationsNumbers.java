@@ -70,13 +70,13 @@ public class PermutationsNumbers {
         for(int i = 0; i< input.size(); i++){
 
             int n = input.get(i);
+
             List<Integer> newInput = new ArrayList<>();
             newInput.addAll(input.subList(0, i));
             newInput.addAll(input.subList(i+1, input.size()) );
 
-            List<Integer> newArrayList = new ArrayList<>();
+            List<Integer> newArrayList = new ArrayList<>(numbers);
             newArrayList.add(n);
-            newArrayList.addAll(numbers);
 
             permutations2(newInput, newArrayList, output);
         }

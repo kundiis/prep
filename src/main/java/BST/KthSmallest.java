@@ -2,6 +2,7 @@ package BST;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
+import java.util.Stack;
 
 /**
  * Created by km on 6/16/18.
@@ -19,6 +20,30 @@ public class KthSmallest {
                 return -o1.compareTo(o2);
             }
         });
+    }
 
+    private void inorder(Node root, int k){
+
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        Node curr = root;
+
+        while(curr != null){
+
+            while (curr !=  null)
+            {
+                /* place pointer to a tree node on
+                   the stack before traversing
+                  the node's left subtree */
+                stack.push(curr);
+                curr = curr.left;
+            }
+
+            curr = stack.pop();
+            System.out.println(curr.data);
+
+            curr = curr.right;
+
+        }
     }
 }

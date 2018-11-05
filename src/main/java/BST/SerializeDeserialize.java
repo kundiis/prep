@@ -13,6 +13,7 @@ public class SerializeDeserialize {
          TreeNode(int x) { val = x; }
     }
 
+    // level order traversal
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
         List<String> builder = new ArrayList();
@@ -42,7 +43,7 @@ public class SerializeDeserialize {
 
         String[] arr = data.split(",");
         TreeNode root = new TreeNode(Integer.parseInt(arr[0]));
-        LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
         int i=1;
@@ -52,6 +53,9 @@ public class SerializeDeserialize {
             if(t==null)
                 continue;
 
+            // root, left, right - put left in q and then right
+
+            // for the left element
             if(!arr[i].equals("#")){
                 t.left = new TreeNode(Integer.parseInt(arr[i]));
                 queue.offer(t.left);
@@ -61,6 +65,7 @@ public class SerializeDeserialize {
             }
             i++;
 
+            // for the right element
             if(!arr[i].equals("#")){
                 t.right = new TreeNode(Integer.parseInt(arr[i]));
                 queue.offer(t.right);

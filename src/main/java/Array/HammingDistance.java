@@ -2,6 +2,9 @@ package Array;
 
 public class HammingDistance {
 
+    /*
+        the length where number of positions of characters are different
+     */
     public int hammingDistance(int x, int y) {
         int out = x^y;
         System.out.println(out);

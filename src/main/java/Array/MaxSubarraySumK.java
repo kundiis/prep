@@ -13,7 +13,7 @@ public class MaxSubarraySumK {
     // o(n)
     public static void maxSubArrayK(int[] nums, int k){
 
-        HashMap<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         int max = 0;
         int sum=0;
 

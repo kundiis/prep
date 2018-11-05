@@ -39,4 +39,15 @@ public class BalancedOrNot {
             return Math.max(left, right) + 1;
         }
     }
+
+    int height(Node root) {
+        return 1 + Math.max(height(root.getLeft()),height(root.getRight()));
+    }
+
+    boolean isHeightBalanced(Node root) {
+        return (root == null) ||
+                (isHeightBalanced(root.getLeft()) &&
+                        isHeightBalanced(root.getRight()) &&
+                        Math.abs(height(root.getLeft()) - height(root.getRight())) <=1);
+    }
 }
