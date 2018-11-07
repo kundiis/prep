@@ -15,7 +15,6 @@ public class SelectionSort {
     public int[] data;
 
     public void sort(){
-
         for(int i =0; i< data.length; i++){
             // index
             int index = i;

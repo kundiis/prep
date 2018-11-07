@@ -5,20 +5,18 @@ import java.util.*;
 
 public class QuickSortOther
 {
-    public static void swap (int A[], int x, int y)
-    {
-        int temp = A[x];
-        A[x] = A[y];
-        A[y] = temp;
+    private static void Quicksort(int A[], int f, int l) {
+        if (f >= l) return;
+        int pivot_index = partition(A, f, l);
+        Quicksort(A, f, pivot_index);
+        Quicksort(A, pivot_index+1, l);
     }
 
     // Reorganizes the given list so all elements less than the first are
     // before it and all greater elements are after it.
-    public static int partition(int A[], int f, int l)
-    {
+    private static int partition(int A[], int f, int l) {
         int pivot = A[f];
-        while (f < l)
-        {
+        while (f < l) {
             while (A[f] < pivot) f++;
             while (A[l] > pivot) l--;
             swap (A, f, l);
@@ -26,18 +24,15 @@ public class QuickSortOther
         return f;
     }
 
-    public static void Quicksort(int A[], int f, int l)
-    {
-        if (f >= l) return;
-        int pivot_index = partition(A, f, l);
-        Quicksort(A, f, pivot_index);
-        Quicksort(A, pivot_index+1, l);
+    private static void swap (int A[], int x, int y) {
+        int temp = A[x];
+        A[x] = A[y];
+        A[y] = temp;
     }
 
     // Usage: java QuickSort [integer] ...
     // All integers must be distinct
-    public static void main(String argv[])
-    {
+    public static void main(String argv[]) {
         int A[] = new int[argv.length];
         for (int i=0 ; i < argv.length ; i++)
             A[i] = Integer.parseInt(argv[i]);

@@ -25,9 +25,9 @@ public class Deadlock {
                         }
                     }
                 }
-
             }
         };
+
         t2 = new Thread("second"){
             @Override
             public void run() {
@@ -44,7 +44,6 @@ public class Deadlock {
                         }
                     }
                 }
-
             }
         };
 

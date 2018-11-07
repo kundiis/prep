@@ -28,7 +28,8 @@ public class MergeSort {
         }
 
         int i = low; int j = mid+1; int k = low;
-        while( i<= mid && j <= high){
+
+        while( i <= mid && j <= high){
             if(tempArray[i] <= tempArray[j]){
                 data[k] = tempArray[i];
                 i++;
