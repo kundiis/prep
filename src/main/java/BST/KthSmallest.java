@@ -22,16 +22,14 @@ public class KthSmallest {
         });
     }
 
-    private void inorder(Node root, int k){
+    private int inorder(Node root, int k){
 
         Stack<Node> stack = new Stack<>();
         stack.push(root);
         Node curr = root;
 
         while(curr != null){
-
-            while (curr !=  null)
-            {
+            while (curr !=  null) {
                 /* place pointer to a tree node on
                    the stack before traversing
                   the node's left subtree */
@@ -41,9 +39,13 @@ public class KthSmallest {
 
             curr = stack.pop();
             System.out.println(curr.data);
-
+            k--;
+            if(k==0){
+                return (int)curr.data;
+            }
             curr = curr.right;
 
         }
+        return -1;
     }
 }
