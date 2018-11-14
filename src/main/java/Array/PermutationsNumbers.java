@@ -45,7 +45,7 @@ public class PermutationsNumbers {
         PermutationsNumbers numbers = new PermutationsNumbers();
        // numbers.permute(new int[]{1,2,3});
 
-        numbers.permute2(new int[]{1,2,3});
+        numbers.permute2(new int[]{1,2,3,4});
     }
 
     public List<List<Integer>> permute2(int[] nums) {
@@ -67,16 +67,17 @@ public class PermutationsNumbers {
             System.out.println(" pair-->"+ numbers);
             return;
         }
+
         for(int i = 0; i< input.size(); i++){
 
-            int n = input.get(i);
+            // add it into existing list
+            List<Integer> newArrayList = new ArrayList<>(numbers);
+            newArrayList.add(input.get(i));
 
+            // rest of them
             List<Integer> newInput = new ArrayList<>();
             newInput.addAll(input.subList(0, i));
             newInput.addAll(input.subList(i+1, input.size()) );
-
-            List<Integer> newArrayList = new ArrayList<>(numbers);
-            newArrayList.add(n);
 
             permutations2(newInput, newArrayList, output);
         }

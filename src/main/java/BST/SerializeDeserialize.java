@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Queue;
 
 public class SerializeDeserialize {
-    public class TreeNode {
+
+    class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -16,8 +17,8 @@ public class SerializeDeserialize {
     // level order traversal
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
-        List<String> builder = new ArrayList();
 
+        List<String> builder = new ArrayList();
         if(root!=null){
             Queue<TreeNode> q1 = new LinkedList<>();
             q1.add(root);
@@ -34,6 +35,7 @@ public class SerializeDeserialize {
         }
         String output = String.join(",", builder);
         return output;
+
     }
 
     // Decodes your encoded data to tree.

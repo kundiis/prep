@@ -12,14 +12,13 @@ public class CompleteTree {
     // if the left element is null and there is a right node
     public static boolean completeTree(Node root){
 
-        boolean isComplete = false;
-
         if(root == null) return true;
 
         Queue<Node> q = new LinkedList<>();
         q.add(root);
 
         while(!q.isEmpty()){
+
             Node element = q.remove();
             if(element == null){
                 break;
@@ -28,6 +27,7 @@ public class CompleteTree {
 
             q.add(element.getLeft());
             q.add(element.getRight());
+
         }
 
         while(!q.isEmpty()){
@@ -40,4 +40,11 @@ public class CompleteTree {
     }
     // variation - full binary tree
     // get the height,count the nodes using bfs and use formula 2^h-1 to match
+
+    private boolean isValidTree(Node root){
+        if(root.getLeft() == null && root.getRight()==null) return true;
+        if(root.getLeft() == null || root.getRight()==null) return false;
+
+        return isValidTree(root.getLeft()) && isValidTree(root.getRight());
+    }
 }
