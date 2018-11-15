@@ -5,23 +5,23 @@ import java.util.Map;
 
 public class MinWindowSubstring {
 
-    public String minWindow(String s, String t) {
+    public String minWindow(String s, String pattern) {
 
         Map<Character, Integer> map = new HashMap<>();
-        for(char x: t.toCharArray()){
+        for(char x: pattern.toCharArray()){
             map.put(x, map.getOrDefault(x, 0)+1);
         }
         int unique = map.size();
 
-        int start = 0;
-        int end = 0;
+        int left = 0;
+        int right = 0;
 
         int min = Integer.MAX_VALUE;
         int startLoc=0;
         int endLoc=0;
 
-        while( end < s.length()){
-            char startChar = s.charAt(end);
+        while( right < s.length()){
+            char startChar = s.charAt(right);
 
             if(map.containsKey(startChar)){
                 map.put(startChar, map.get(startChar)-1);
@@ -31,24 +31,24 @@ public class MinWindowSubstring {
             // found all the character once
             while(unique == 0){
 
-                if( min > (end - start)){
-                    min = Math.min(min, end - start);
-                    startLoc = start;
-                    endLoc = end;
+                if( min > (right - left)){
+                    min = Math.min(min, right - left);
+                    startLoc = left;
+                    endLoc = right;
                 }
 
-                // leaving the tail behind
-                char endChar = s.charAt(start);
+                // try to move the left
+                char endChar = s.charAt(left);
                 if(map.containsKey(endChar)){
                     map.put(endChar, map.get(endChar)+1);
                     if(map.get(endChar)==1){
                         unique++;
                     }
                 }
-
-                start ++;
+                left ++;
             }
-            end ++;
+
+            right ++;
         }
         return s.substring(startLoc, endLoc + 1);
 
