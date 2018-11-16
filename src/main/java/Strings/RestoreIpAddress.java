@@ -5,7 +5,7 @@ import java.util.List;
 
 public class RestoreIpAddress {
 
-    public List<String> restoreIpAddresses(String s) {
+    public static List<String> restoreIpAddresses(String s) {
         List<String> res = new ArrayList<>();
         if(s.length() < 4 || s.length() > 12){
             return res;
@@ -29,11 +29,16 @@ public class RestoreIpAddress {
 
     }
 
-    private boolean isValid(String sec){
+    private static boolean isValid(String sec){
         if((sec.length()>1 && sec.charAt(0)=='0') || Integer.parseInt(sec)>255){
             return false;
         }
         return true;
     }
 
+    public static void main(String[] args) {
+        String s= "25525511135";
+        System.out.println(restoreIpAddresses(s));
+
+    }
 }
