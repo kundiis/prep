@@ -7,6 +7,8 @@ public class LongestIncreasingSequenceLength {
     // https://algorithms.tutorialhorizon.com/dynamic-programming-longest-increasing-subsequence/
     // solution at previous steps is applicable for next step
 
+    // {3, 10, 2, 1, 20}
+
     public void algo(int[] array){
 
         int[] temp = new int[array.length];
@@ -29,6 +31,7 @@ public class LongestIncreasingSequenceLength {
 
         int result = 1;
         for(int i=0; i<nums.length; i++){
+
             for(int j=0; j<i; j++){
                 if(nums[i]>nums[j]){
                     max[i]= Math.max(max[i], max[j]+1);
@@ -36,6 +39,7 @@ public class LongestIncreasingSequenceLength {
                 }
             }
             result = Math.max(max[i], result);
+
         }
 
         return result;

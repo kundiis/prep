@@ -28,25 +28,31 @@ public class LongestSubSequence {
         return max;
     }
 
-    public static int lcsRecusion(String s1, String s2, int x, int y){
+
+    public static int lcsRecusion(String s1, String s2, int x, int y, Integer[][] temp){
 
         if(x==-1 || y == -1){
             return 0;
         }
-        if(s1.charAt(x) == s2.charAt(y) ){
-            return 1 + lcsRecusion(s1, s2, x-1, y-1);
-        }else{
-            return Math.max(lcsRecusion(s1, s2, x-1, y), lcsRecusion(s1, s2, x, y-1));
-        }
+        if(temp[x][y]!=null) return temp[x][y];
 
+        if(s1.charAt(x) == s2.charAt(y) ){
+            temp[x][y] = 1 + lcsRecusion(s1, s2, x-1, y-1, temp);
+        }else{
+            temp[x][y] = Math.max(lcsRecusion(s1, s2, x-1, y, temp), lcsRecusion(s1, s2, x, y-1, temp));
+        }
+        return temp[x][y];
     }
 
     public static void main(String args[]){
         LongestSubSequence lcs = new LongestSubSequence();
-        String str1 = "ABCDGHLQR";
-        String str2 = "AEDPHR";
+        String str1 = "abcd";
+        String str2 = "abd";
 
-        int result = lcs.lcsDynamic(str1.toCharArray(), str2.toCharArray());
-        System.out.print(result);
+        //int result = lcs.lcsDynamic(str1.toCharArray(), str2.toCharArray());
+        //System.out.print(result);
+
+        System.out.println(lcsRecusion(str1,str2, str1.length()-1, str2.length()-1, new Integer[10][10]));
+
     }
 }

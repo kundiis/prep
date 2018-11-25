@@ -1,6 +1,6 @@
 package DynamicP;
 
-public class LongestCommonSubstring {
+public class LongestCommonSubsequence {
 
     public static int algo(String s1, String s2){
 
@@ -18,8 +18,15 @@ public class LongestCommonSubstring {
                     else{
                         table[i][j] = 1 + table[i - 1][j - 1];
                     }
-                    max = Math.max(table[i][j], max);
+                }else{
+                    if(i==0 || j==0){
+                        table[i][j]=0;
+                    }else{
+                        table[i][j] = 1+ Math.max(table[i - 1][j], table[i][j - 1]);
+                    }
                 }
+                max = Math.max(table[i][j], max);
+
             }
 
         }
@@ -27,19 +34,7 @@ public class LongestCommonSubstring {
     }
 
     public static void main(String[] args) {
-        System.out.println(algo("bcd", "abcd"));
-        System.out.println(lcs("bcd".toCharArray(), "abcd".toCharArray(), 3, 4, 0 ));
+        System.out.println(algo("abc", "ac"));
     }
 
-    private static int lcs(char[] a, char[] b, int i, int j, int count) {
-        if (i == 0 || j == 0)
-            return count;
-
-        if (a[i - 1] == b[j - 1]) {
-            count = 1+ lcs(a, b, i - 1, j - 1, 0);
-        }else
-            count = Math.max(lcs(a, b, i, j - 1, 0), lcs(a, b, i - 1, j, 0));
-
-        return count;
-    }
 }
