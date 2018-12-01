@@ -38,7 +38,6 @@ public class IsomorphicStrings {
                 lookup2.put(b,a);
             }
 
-
         }
 
         return true;

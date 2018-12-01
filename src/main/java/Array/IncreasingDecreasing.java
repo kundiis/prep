@@ -3,9 +3,7 @@ package Array;
 public class IncreasingDecreasing {
 
     private static int increasingDecreasing(int[] arr){
-
         return findMax(arr, 0, arr.length-1);
-
     }
 
     private static int findMax(int[] arr, int start, int end) {

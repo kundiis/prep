@@ -10,7 +10,6 @@ public class SpiralOrder {
 
     // uses 2 stack
     // or get the height and run recursive at every single level
-
     public void SpiralOrder(Node root){
 
         Stack<Node> s1 = new Stack();

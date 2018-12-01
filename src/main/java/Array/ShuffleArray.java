@@ -12,7 +12,6 @@ public class ShuffleArray {
     // Fisher-Yates algo
 
     // o(n)
-
     public void shuffle(){
         Random rand = new Random();
         for( int i = array.length; i > 0; i--){

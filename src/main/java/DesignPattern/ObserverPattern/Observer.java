@@ -4,11 +4,9 @@ package DesignPattern.ObserverPattern;
 // https://www.techyourchance.com/thread-safe-observer-design-pattern-in-java/
 
 /*
-
 An observer
-An subject/Observable
-
- */
+An observable/Observable
+*/
 
 public interface Observer {
 

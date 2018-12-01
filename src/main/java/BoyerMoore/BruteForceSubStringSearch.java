@@ -10,7 +10,7 @@ public class BruteForceSubStringSearch {
         int lengthOfText = text.length();
         int patternLength = pattern.length();
 
-        for(int i = 0; i< lengthOfText - patternLength; i++){
+        for(int i = 0; i < lengthOfText - patternLength; i++){
             int j = 0;
             for( ; j<= patternLength; j++){
                 if(text.charAt(i+j) != pattern.charAt(j) ){

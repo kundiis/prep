@@ -18,7 +18,7 @@ public class SerializeDeserialize {
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
 
-        List<String> builder = new ArrayList();
+        List<String> builder = new ArrayList<>();
         if(root!=null){
             Queue<TreeNode> q1 = new LinkedList<>();
             q1.add(root);

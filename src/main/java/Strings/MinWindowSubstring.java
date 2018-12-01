@@ -30,14 +30,13 @@ public class MinWindowSubstring {
 
             // found all the character once
             while(unique == 0){
-
                 if( min > (right - left)){
                     min = Math.min(min, right - left);
                     startLoc = left;
                     endLoc = right;
                 }
 
-                // try to move the left
+                // move to left
                 char endChar = s.charAt(left);
                 if(map.containsKey(endChar)){
                     map.put(endChar, map.get(endChar)+1);
@@ -47,16 +46,14 @@ public class MinWindowSubstring {
                 }
                 left ++;
             }
-
             right ++;
         }
-        return s.substring(startLoc, endLoc + 1);
 
+        return s.substring(startLoc, endLoc + 1);
     }
 
     public static void main(String[] args) {
         MinWindowSubstring minWindowSubstring = new MinWindowSubstring();
         System.out.println(minWindowSubstring.minWindow("ADOBECODEBANC", "ABC"));
     }
-
 }

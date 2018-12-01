@@ -5,8 +5,8 @@ import java.util.PriorityQueue;
 
 public class MedianOfDataStreamIntegers {
 
-    PriorityQueue<Integer> maxHeap;//lower half
-    PriorityQueue<Integer> minHeap;//higher half
+    PriorityQueue<Integer> maxHeap; //lower half
+    PriorityQueue<Integer> minHeap; //higher half
 
     public MedianOfDataStreamIntegers(){
         maxHeap = new PriorityQueue<>(Collections.reverseOrder());
@@ -16,7 +16,7 @@ public class MedianOfDataStreamIntegers {
     // Adds a number into the data structure.
     public void addNum(int num) {
 
-        /* we dont know whether the number is smaller or bigger */
+        /* we don't know whether the number is smaller or bigger */
         maxHeap.offer(num);
         minHeap.offer(maxHeap.poll());
 

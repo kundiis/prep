@@ -1,4 +1,4 @@
-package Array;
+package Backtracking;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,10 +42,11 @@ public class PermutationsNumbers {
     }
 
     public static void main(String[] args) {
+
         PermutationsNumbers numbers = new PermutationsNumbers();
        // numbers.permute(new int[]{1,2,3});
+        numbers.permute2(new int[]{1,2,3,4,5});
 
-        numbers.permute2(new int[]{1,2,3,4});
     }
 
     public List<List<Integer>> permute2(int[] nums) {
@@ -56,6 +57,7 @@ public class PermutationsNumbers {
             input.add(nums[i]);
         }
         permutations2(input, new ArrayList<>(), output);
+        System.out.println(output.size());
         return output;
 
     }
@@ -80,8 +82,8 @@ public class PermutationsNumbers {
             newInput.addAll(input.subList(i+1, input.size()) );
 
             permutations2(newInput, newArrayList, output);
+
         }
     }
-
 }
 

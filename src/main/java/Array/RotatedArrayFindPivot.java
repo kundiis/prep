@@ -2,21 +2,17 @@ package Array;
 
 public class RotatedArrayFindPivot {
 
-
     private int findPivot(int[] nums, int start, int end){
 
         while(start <= end){
             int mid = (start+end)/2;
 
-            if( mid < end-1 && nums[mid] > nums[mid+1]){
-                return mid;
+            if(nums[mid] > nums[mid+1]){
+                return nums[mid];
+            }else if( nums[start] < nums[mid] ) { // array is sorted and the pivot is another half
+                start = mid;
             }else{
-                if( nums[mid] < nums[end]){
-                    end = mid-1;
-                }else{
-                    start = mid+1;
-                }
-
+                end = mid;
             }
         }
         return -1;

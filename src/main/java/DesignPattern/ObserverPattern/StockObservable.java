@@ -3,7 +3,7 @@ package DesignPattern.ObserverPattern;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StockObservable implements Subject {
+public class StockObservable implements Observable {
 
     private List<Observer> observerList = new ArrayList<>();
     private Integer value;

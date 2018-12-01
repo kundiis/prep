@@ -45,6 +45,7 @@ public class MergeSort {
             i++;
             k++;
         }
+
         while(j <= high){
             data[k] = tempArray[j];
             j++;
@@ -52,5 +53,4 @@ public class MergeSort {
         }
 
     }
-
 }

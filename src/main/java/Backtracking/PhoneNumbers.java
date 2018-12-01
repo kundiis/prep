@@ -5,12 +5,12 @@ import java.util.*;
 public class PhoneNumbers {
 
     public List<String> letterCombinations(String digits) {
-        List<String> rst = new ArrayList<String>();
+        List<String> rst = new ArrayList<>();
         if (digits == null || digits.length() == 0) {
             return rst;
         }
         //Init map
-        HashMap<Character, String> map = new HashMap<Character, String>();
+        HashMap<Character, String> map = new HashMap<>();
         map.put('2',"abc");
         map.put('3',"def");
         map.put('4',"ghi");
@@ -19,12 +19,13 @@ public class PhoneNumbers {
         map.put('7',"pqrs");
         map.put('8',"tuv");
         map.put('9',"wxyz");
+
         // Init 1 digits and the chars in queue
         Queue<String> queue = new LinkedList<>();
         char current = digits.charAt(0);
         String alpha = map.get(current);
         for (int i = 0; i < alpha.length(); i++) {
-            queue.offer(alpha.charAt(i) + "");
+            queue.offer(alpha.charAt(i) + ""); // a, b, c
         }
 
         int size = 0;
@@ -39,6 +40,7 @@ public class PhoneNumbers {
                 }
             }
         }
+
         while (!queue.isEmpty()) {
             rst.add(queue.poll());
         }
@@ -48,7 +50,7 @@ public class PhoneNumbers {
 
     public static void main(String[] args) {
         PhoneNumbers numbers = new PhoneNumbers();
-        System.out.println(numbers.letterCombinations("234"));
+        System.out.println(numbers.letterCombinations("23"));
     }
 
 }

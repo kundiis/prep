@@ -13,26 +13,25 @@ public class KthSmallest {
 
         // traverse left to find the count or do inorder traversal in stack and pop until K is reached
         // or use min heap
-
         PriorityQueue<Integer> Q = new PriorityQueue<>(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
                 return -o1.compareTo(o2);
             }
         });
+
     }
 
-    private int inorder(Node root, int k){
+    private int inOrder(Node root, int k){
 
         Stack<Node> stack = new Stack<>();
         stack.push(root);
         Node curr = root;
 
         while(curr != null){
+
             while (curr !=  null) {
-                /* place pointer to a tree node on
-                   the stack before traversing
-                  the node's left subtree */
+                /* place pointer to a tree node on the stack before traversing the node's left subtree */
                 stack.push(curr);
                 curr = curr.left;
             }
@@ -46,6 +45,7 @@ public class KthSmallest {
             curr = curr.right;
 
         }
+
         return -1;
     }
 }

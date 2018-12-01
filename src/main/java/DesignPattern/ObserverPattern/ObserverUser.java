@@ -2,10 +2,10 @@ package DesignPattern.ObserverPattern;
 
 public class ObserverUser implements Observer {
 
-    Subject subject;
+    Observable observable;
 
-    public ObserverUser(Subject subject) {
-        this.subject = subject;
+    public ObserverUser(Observable observable) {
+        this.observable = observable;
     }
 
     @Override

@@ -3,7 +3,9 @@ package Array;
 public class FirstOccurrenceSortedArray {
 
     private int firstOccurence(int[] nums, int start, int end, int target){
+
         int result = -1;
+
         while( start <= end){
 
             int mid = (start+end)/2;
@@ -16,6 +18,7 @@ public class FirstOccurrenceSortedArray {
                 start = mid+1;
             }
         }
+
         return result;
     }
 

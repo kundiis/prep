@@ -44,6 +44,11 @@ public class Operations {
         return first.substring(0, max);
     }
 
+    /*
+    find all suffixes
+    sort them
+    find the longest prefix of all suffixes
+     */
     public String longestRepeatedSubstring(String text){
 
         List<String> suffixes = suffixes(text); // O(n)

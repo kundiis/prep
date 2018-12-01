@@ -51,6 +51,7 @@ class LRUCache {
     }
 
     private DLL addOnHead(int data){
+
         DLL node = new DLL(data);
         node.next = head; // make new node as head
 
