@@ -13,6 +13,7 @@ public class TopologicalOrder {
     Stack<Vertex> s = new Stack<>();
 
     public void DFSRecursion(Vertex v){
+
         // recursion
         v.setVisited(true);
         System.out.println(v.getData());
